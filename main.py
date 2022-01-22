@@ -33,7 +33,7 @@ st.sidebar.image("https://i.ibb.co/hRV5Gmt/eee.png")
 
 st.image("https://s10.gifyu.com/images/demo42141da877a812d4.gif")
 
-upload = st.file_uploader("Upload List of crawled URLs", type=["xlsx"])
+upload = st.file_uploader("Upload File", type=["xlsx"])
 st.info("Upload a XLSX file as per description in the sidebar") 
 
 if upload is not None:
