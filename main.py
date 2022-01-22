@@ -36,7 +36,7 @@ st.info("Upload a XLSX file as per description in the sidebar")
 
 if upload is not None:
 
-	keywords = pd.read_excel(upload, sheet_name=0, converters={'keyword':str})
+	keywords = pd.read_excel(upload, sheet_name=0)
 	tags = pd.read_excel(upload, sheet_name=1)
 	cols = tags.columns
 
