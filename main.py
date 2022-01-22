@@ -7,7 +7,6 @@
 import streamlit as st
 import pandas as pd
 import csv
-import xlrd
 
 
 # In[4]:
