@@ -6,8 +6,6 @@
 
 import streamlit as st
 import pandas as pd
-from tqdm import tqdm
-tqdm.pandas()
 import csv
 
 # In[4]:
@@ -54,7 +52,7 @@ if upload is not None:
  	# ---- check if list value is in kw, if TRUE, value is used as category label 
 
 	for i in range(len(cols)):
-		keywords[cols[i]] = keywords['keyword'].str.title().str.findall(fr"(?i)\b({'|'.join(sorted(catLst[i],key=len,reverse=True))})\b").progress_apply(','.join)
+		keywords[cols[i]] = keywords['keyword'].str.title().str.findall(fr"(?i)\b({'|'.join(sorted(catLst[i],key=len,reverse=True))})\b").apply(','.join)
 
 	mapping = {
     
