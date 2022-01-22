@@ -7,6 +7,8 @@
 import streamlit as st
 import pandas as pd
 import csv
+import xlrd
+
 
 # In[4]:
 
@@ -36,7 +38,7 @@ st.info("Upload a XLSX file as per description in the sidebar")
 
 if upload is not None:
 
-	keywords = pd.read_excel(upload, sheet_name=0)
+	keywords = pd.read_excel(upload, sheet_name=0, converters={'keyword':str})
 	tags = pd.read_excel(upload, sheet_name=1)
 	cols = tags.columns
 
