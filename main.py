@@ -80,9 +80,13 @@ if upload is not None:
 		keywords[cols[i]] = keywords['keyword'].str.title().str.findall(fr"(?i)\b({'|'.join(sorted(catLst[i],key=len,reverse=True))})\b").progress_apply(','.join)
 		
 		if mapping is not None:
-			col_map = mapping.get(cols[i])
-			keywords[cols[i]] = keywords[cols[i]].replace(col_map)
-    
+			try:
+				col_map = mapping.get(cols[i])
+				col_map = { k.title():v.title() for k,v in col_map.items() }
+				keywords[cols[i]] = keywords[cols[i]].replace(col_map)
+			except AttributeError:
+				pass
+			
 	st.table(keywords)
 	
 	csv = keywords.to_csv().encode('utf-8')
