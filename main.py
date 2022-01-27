@@ -84,7 +84,7 @@ if upload is not None:
 				col_map = mapping.get(cols[i])
 				col_map = { k.capitalize():v.capitalize() for k,v in col_map.items() }
 				keywords[cols[i]] = keywords[cols[i]].replace(col_map)
-				st.write(col_map)
+				#st.write(col_map)
 			except AttributeError:
 				pass
 			
